@@ -1,0 +1,22 @@
+.stacked-tabs {
+  border-radius: 0;
+  font-weight: 300;
+
+  a {
+    border-bottom: 1px solid lighten($laravel-border-color, 5%);
+    border-left: 3px solid transparent;
+    color: $body-color;
+  }
+
+  li:last-child a {
+    border-bottom: 0;
+  }
+
+  li a.active {
+    border-left: 3px solid $brand-primary;
+  }
+
+  li a:active, li a:hover, li a:link, li a:visited {
+    background-color: white;
+  }
+}
