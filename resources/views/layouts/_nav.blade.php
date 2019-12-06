@@ -14,9 +14,9 @@
                 <li class="nav-item{{ request()->is('/') ? ' active' : '' }}">
                     <a class="nav-link" href="/predict/diabetes">Diabetes</a>
                 </li>
-                <li class="nav-item{{ request()->is('/') ? ' active' : '' }}">
+                <!-- <li class="nav-item{{ request()->is('/') ? ' active' : '' }}">
                     <a class="nav-link" href="/predict/heart">Heart Disease</a>
-                </li>
+                </li> -->
                 <!-- <li class="nav-item{{ request()->is('news') ? ' active' : '' }}">
                     <a class="nav-link" href="/news">News</a>
                 </li>

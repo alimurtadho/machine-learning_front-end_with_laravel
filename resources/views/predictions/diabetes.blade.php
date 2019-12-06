@@ -16,7 +16,7 @@
         @if(isset($results))
             <div class="alert alert-{{ $results['Ensemble'] != 1 ? 'success' : 'warning' }}" role="alert">
                 @if($results['Ensemble'] == 1)
-                    You might have risk of developing diabetes.
+                    You have risk of developing diabetes.
                 @else
                     You do not have risk of diabetes.
                 @endif
@@ -41,26 +41,26 @@
                                     <td>Logistic Regression</td>
                                     <td>{{ $results['LogisticRegression'] ? 'Yes' : 'No' }}</td>
                                 </tr>
-                                <tr{!! $results['LinearSVC'] ? ' class="table-danger"' : ' class="table-success"' !!}>
-                                    <td>Linear Support Vector Classifier</td>
-                                    <td>{{ $results['LinearSVC'] ? 'Yes' : 'No' }}</td>
+                                <tr{!! $results['DecisionTree'] ? ' class="table-danger"' : ' class="table-success"' !!}>
+                                    <td>Decison Tree</td>
+                                    <td>{{ $results['DecisionTree'] ? 'Yes' : 'No' }}</td>
                                 </tr>
-                                <tr{!! $results['NaiveBayes'] ? ' class="table-danger"' : ' class="table-success"' !!}>
-                                    <td>Naive Bayes</td>
-                                    <td>{{ $results['NaiveBayes'] ? 'Yes' : 'No' }}</td>
+                                <tr{!! $results['RandomForest'] ? ' class="table-danger"' : ' class="table-success"' !!}>
+                                    <td>Random Forest</td>
+                                    <td>{{ $results['RandomForest'] ? 'Yes' : 'No' }}</td>
                                 </tr>
                                 <tr{!! $results['KNeighbors'] ? ' class="table-danger"' : ' class="table-success"' !!}>
                                     <td>K-Nearest Neighbors</td>
                                     <td>{{ $results['KNeighbors'] ? 'Yes' : 'No' }}</td>
                                 </tr>
-                                <tr{!! $results['NeuralNetwork'] ? ' class="table-danger"' : ' class="table-success"' !!}>
-                                    <td>Neural Network (Multi-Layer Perceptron)</td>
-                                    <td>{{ $results['NeuralNetwork'] ? 'Yes' : 'No' }}</td>
+                                <tr{!! $results['GradientBoasting'] ? ' class="table-danger"' : ' class="table-success"' !!}>
+                                    <td>Gradient Boosting</td>
+                                    <td>{{ $results['GradientBoasting'] ? 'Yes' : 'No' }}</td>
                                 </tr>
                             </tbody>
                             <tfoot>
                                 <tr{!! $results['Ensemble'] ? ' class="table-danger"' : ' class="table-success"' !!}>
-                                    <th>Ensemble Classifier (Combination of all above)</th>
+                                    <th>Ensemble Classifier (Combination of all)</th>
                                     <th>{{ $results['Ensemble'] ? 'Yes' : 'No' }}</th>
                                 </tr>
                             </tfoot>
@@ -85,7 +85,7 @@
         </div>
 
         <div class="form-group mt-2 row{{ $errors->has('pregnant') ? ' has-danger' : '' }}">
-            <label for="pregnant" class="col-4 col-form-label text-right">No of times Pregnant</label>
+            <label for="pregnant" class="col-4 col-form-label text-right">No of Pregnancies</label>
 
             <div class="col-6">
                 <input placeholder="2" id="pregnant" type="number" class="form-control" name="pregnant" value="{{ old('pregnant') }}" required>
@@ -100,7 +100,7 @@
 
         <div class="form-group mt-2 row{{ $errors->has('plasma_glucose_concentration') ? ' has-danger' : '' }}">
             <label for="plasma_glucose_concentration" class="col-4 col-form-label text-right">
-                2-hr Glucose Tolerance Test (in mg/dL)
+                Glucose (in mg/dL)
                 <a target="_blank" href="https://goo.gl/pftSRy"><i class="fa fa-question-circle-o"> </i></a>
             </label>
 
@@ -119,7 +119,7 @@
         </div>
         <div class="form-group mt-2 row{{ $errors->has('diastolic_bp') ? ' has-danger' : '' }}">
             <label for="diastolic_bp" class="col-4 col-form-label text-right">
-                Diastolic Blood Pressure (in mmHg)
+                Blood Pressure (in mmHg)
                 <a target="_blank" href="https://goo.gl/LBtbi4"><i class="fa fa-question-circle-o"> </i></a>
             </label>
 
@@ -138,7 +138,7 @@
         </div>
         <div class="form-group mt-2 row{{ $errors->has('tsft') ? ' has-danger' : '' }}">
             <label for="tsft" class="col-4 col-form-label text-right">
-                Triceps Skin Fold Thickness
+                Skin Thickness
                 <a target="_blank" href="https://goo.gl/HtfIUf"><i class="fa fa-question-circle-o"> </i></a>
             </label>
 
@@ -157,7 +157,7 @@
         </div>
         <div class="form-group mt-2 row{{ $errors->has('serum_insulin') ? ' has-danger' : '' }}">
             <label for="serum_insulin" class="col-4 col-form-label text-right">
-                2-hr Serum Insulin (μU/ml)
+                Insulin (μU/ml)
                 <a target="_blank" href="https://goo.gl/nkWyLd"><i class="fa fa-question-circle-o"> </i></a>
             </label>
 
