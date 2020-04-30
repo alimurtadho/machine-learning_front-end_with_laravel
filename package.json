@@ -9,7 +9,7 @@
   "devDependencies": {
     "axios": "^0.18.1",
     "bootstrap": "^4.0.0-alpha.6",
-    "jquery": "^3.1.1",
+    "jquery": "^3.5.0",
     "laravel-mix": "^0.7.2",
     "lodash": "^4.17.4",
     "sweetalert": "^1.1.3",
